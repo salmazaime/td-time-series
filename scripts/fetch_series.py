@@ -7,7 +7,7 @@ import requests
 # least 90 days, confirmed by real testing) -- no need to wait weeks for a
 # scheduled pipeline to accumulate data, unlike this course's other real-time-
 # history projects (TD2, TP2).
-LAT, LON = 48.0061, 0.1996  # Le Mans
+LAT, LON = 64.1466, -21.9426  # Reykjavik
 PAST_DAYS = 90
 URL = "https://air-quality-api.open-meteo.com/v1/air-quality"
 
@@ -54,7 +54,7 @@ def aggregate_to_daily(times, values):
     return rows
 
 def main():
-    print(f"Fetching {PAST_DAYS} days of real hourly CO2 (ppm) for Le Mans "
+    print(f"Fetching {PAST_DAYS} days of real hourly CO2 (ppm) for Reykjavik "
           f"({LAT}, {LON}) from Open-Meteo Air Quality API...")
     data = fetch_hourly_co2()
     times = data["hourly"]["time"]
